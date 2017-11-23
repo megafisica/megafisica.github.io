@@ -19,59 +19,95 @@
         });
     </script>
     <style>
+
+        /*
+         *
+         * Configurações gerais
+         *
+         */
+
         html, body {
             font-family:'Open Sans', sans-serif;
         }
+
         .section {
             box-shadow:0 0 10px 1px #000;
+            text-align:center;
         }
+        
+        /*
+         * Configura a tela do jogo
+         *
+         */
+
+        .section.conteudoPrincipal.primeiroDesafio {
+            background-color:#75b5ea;
+        }
+        
+        /*
+         *
+         * Configura o footer
+         *
+         */
+
         .section.footer {
             background-repeat:no-repeat;
             background-attachment:fixed;
             background-size:cover;
         }
+
         .section.footer.primeiroDesafio,
             .section.footer.segundoDesafio,
             .section.footer.terceiroDesafio {
                 background-position:center center;
         }
-        .section.footer.index,
-            .section.footer.sobre {
+
+        .section.footer.paginaPrincipal,
+            .section.footer.paginaSobre {
                 background-position:center bottom;
         }
+
         .section.footer.primeiroDesafio {
             background-image:url('img_primeiro.jpg');            
         }
+
         .section.footer.segundoDesafio {
             background-image:url('img_segundo.jpg');     
         }
+
         .section.footer.terceiroDesafio {
             background-image:url('img_terceiro.jpg');         
         }
-        .section.footer.index {
+
+        .section.footer.paginaPrincipal {
             background-image:url('img_index.jpg');           
         }
-        .section.footer.sobre {
+
+        .section.footer.paginaSobre {
             background-image:url('img_sobre.jpg');             
         }
+
         footer {
-            text-align:center;
             background-color:rgba(20, 20, 20, 0.75);
             color:#eee;
             padding:2.5rem;
         }
+
         footer p {
             font-size:1.5rem;
         }
+
         footer p a {
             color:#eee;
             font-weight:bold;
             text-decoration:none;
             text-shadow:1px 1px 1px #333;
         }
+
         footer p a:hover {
-            color:#ccc;
+            color:#ddd
         }
+
         footer p.logo {
             font-size:4rem;
             text-shadow:1px 1px 5px #333;
@@ -84,10 +120,14 @@
         <div class="section">
 
         </div>
-        <div class="section">
 
+        <div class="section conteudoPrincipal primeiroDesafio">
+            <p class="tema">Mecânica</p>
+            <p><a id="botao" href="#">Clique para iniciar...</a></p>
+            <p id="exibePalavra"></p>           
         </div>
-        <div class="section footer sobre">
+
+        <div class="section footer primeiroDesafio">
             <footer>
                 <p class="logo">MegaFísica<br />
                 &copy;<br />
@@ -98,6 +138,7 @@
                 MAFIA (CEFET UnED Nova Iguaçu)</a></p>
             </footer>
         </div>
+
     </div>
 </body>
 </html>
