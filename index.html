@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>MegaFísica</title>
+    <meta name="author" content="Caio Sabadin" />
+    <meta name="description" content="Jogo 'Mega Senha' versão de física" />
+    <meta name="keywords" content="megasenha, fisica, megafisica, cefet, mafia" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="jquery.fullPage.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" /> 
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <script type="text/javascript" src="core.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            carregaFooter();
+            $('#fullpage').fullpage();
+        });
+    </script>
+    <style>
+        html, body {
+            font-family:'Open Sans', sans-serif;
+        }
+        .section {
+            box-shadow:0 0 10px 1px #000;
+        }
+        .section.footer {
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+        .section.footer.primeiroDesafio,
+            .section.footer.segundoDesafio,
+            .section.footer.terceiroDesafio {
+                background-position:center center;
+        }
+        .section.footer.index,
+            .section.footer.sobre {
+                background-position:center bottom;
+        }
+        .section.footer.primeiroDesafio {
+            background-image:url('img_primeiro.jpg');            
+        }
+        .section.footer.segundoDesafio {
+            background-image:url('img_segundo.jpg');     
+        }
+        .section.footer.terceiroDesafio {
+            background-image:url('img_terceiro.jpg');         
+        }
+        .section.footer.index {
+            background-image:url('img_index.jpg');           
+        }
+        .section.footer.sobre {
+            background-image:url('img_sobre.jpg');             
+        }
+        footer {
+            text-align:center;
+            background-color:rgba(20, 20, 20, 0.75);
+            color:#eee;
+            padding:2.5rem;
+        }
+        footer p {
+            font-size:1.5rem;
+        }
+        footer p a {
+            color:#eee;
+            font-weight:bold;
+            text-decoration:none;
+            text-shadow:1px 1px 1px #333;
+        }
+        footer p a:hover {
+            color:#ccc;
+        }
+        footer p.logo {
+            font-size:4rem;
+            text-shadow:1px 1px 5px #333;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section">
+
+        </div>
+        <div class="section">
+
+        </div>
+        <div class="section footer sobre">
+            <footer>
+                <p class="logo">MegaFísica<br />
+                &copy;<br />
+                <span id="ano"></span>
+                <p></p>
+                <p></p>
+                <p><a href="about.html">Desenvolvido por<br />
+                MAFIA (CEFET UnED Nova Iguaçu)</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
