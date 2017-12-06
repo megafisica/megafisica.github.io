@@ -16,6 +16,53 @@
         $(document).ready(function() {
             carregaFooter();
             $('#fullpage').fullpage();
+            var desafio = 1;
+            var nivel = 1;
+            var numero = 0;
+            var temporizador = 2;
+            var palavra = sorteiaPalavras(desafio, nivel);
+            var iniciouJogo = false;
+
+            setInterval(function() {
+                    if(iniciouJogo) {
+                        $("#tempo").css('display', 'inline');
+                        temporizador--;
+                        var tempoRestante = "Tempo restante: " + temporizador + "s";
+                        $("#tempo").html(tempoRestante);
+                        if(temporizador==0) {
+                            var mensagem = "Você perdeu! :(<br /><a href='index.html'>Clique aqui para jogar novamente...</a>";
+                            $("#tempo").css('display', 'none');
+                            $("#botao").css('display', 'none');
+                            $('#exibePalavra').html(mensagem);
+                            iniciouJogo = false;
+                        }
+                    }
+            }, 1000);
+
+            $('#botao').click(function() {
+                
+                if(!iniciouJogo) {
+                    iniciouJogo = true;
+                }
+
+                if(nivel==4) {
+                    $('#botao').css('display', 'none');
+                    var mensagem = "Parabéns! :)";
+                    $('#exibePalavra').html(mensagem);
+                }
+                else {
+                    var numeroEstilizado = numero+1;
+                    var mensagem = "Nível " + nivel + ", " + numeroEstilizado + "a. expressão secreta:<br />" + palavra[numero] + "";
+                    $('#exibePalavra').html(mensagem);
+                    numero++;
+                    if(numero == 3) {
+                        numero = 0;
+                        nivel++;
+                        palavra = sorteiaPalavras(desafio, nivel);
+                    }
+                }
+            });
+            
         });
     </script>
     <style>
@@ -40,8 +87,45 @@
          *
          */
 
+        .section.conteudoPrincipal {
+            color:#fff;
+            font-size:3rem;
+            text-shadow:1px 1px 1px #222;
+            font-weight:bold;
+            line-height:1.8;
+        }
+
+        .section.conteudoPrincipal #exibePalavra a {
+            text-decoration:none;
+            font-weight:normal;
+            text-shadow:1px 1px 2px #222;
+            color:#fff;
+            font-size:1.5rem;
+        }
+
+        .section.conteudoPrincipal a#botao {
+            text-decoration: none;
+            background-color:#ddd;
+            color:#222;
+            font-size:1.5rem;
+            text-shadow:1px 1px 1px #aaa;
+            padding:1.5rem 1rem 1.5rem 1rem;
+            border-right:0.2rem solid #999;
+            border-bottom:0.25rem solid #999;
+        }
+
+        #exibePalavra {
+            font-weight:normal;
+            text-shadow:1px 1px 2px #222;
+        }
+
+        #tempo {
+            font-weight:normal;
+            display:none;
+        }
+
         .section.conteudoPrincipal.primeiroDesafio {
-            background-color:#75b5ea;
+            background-color:#17436d;
         }
         
         /*
@@ -97,15 +181,16 @@
             font-size:1.5rem;
         }
 
-        footer p a {
+        footer a {
             color:#eee;
             font-weight:bold;
             text-decoration:none;
             text-shadow:1px 1px 1px #333;
+            display:inline;
         }
 
-        footer p a:hover {
-            color:#ddd
+        footer a:hover {
+            color:#ddd;
         }
 
         footer p.logo {
@@ -124,18 +209,21 @@
         <div class="section conteudoPrincipal primeiroDesafio">
             <p class="tema">Mecânica</p>
             <p><a id="botao" href="#">Clique para iniciar...</a></p>
-            <p id="exibePalavra"></p>           
+            <p id="exibePalavra"></p>
+            <p id="tempo"></p>
         </div>
 
         <div class="section footer primeiroDesafio">
             <footer>
+                <a href="about.html">
                 <p class="logo">MegaFísica<br />
                 &copy;<br />
                 <span id="ano"></span>
                 <p></p>
                 <p></p>
-                <p><a href="about.html">Desenvolvido por<br />
-                MAFIA (CEFET UnED Nova Iguaçu)</a></p>
+                <p>Desenvolvido por<br />
+                MAFIA (CEFET UnED Nova Iguaçu)</p>
+                </a>
             </footer>
         </div>
 
