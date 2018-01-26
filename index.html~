@@ -24,6 +24,7 @@
             var iniciouJogo = false;
 
             setInterval(function() {
+                    alert("teste!");
                     if(iniciouJogo) {
                         $("#tempo").css('display', 'inline');
                         temporizador--;
