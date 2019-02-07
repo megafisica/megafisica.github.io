@@ -1,3 +1,6 @@
+TO-DO:
+    - voltar à escolha de desafios, nas páginas primeiro.html, segundo.html e terceiro.html
+
 Fotos da lâmpada:
     Krissia Cruz, disponível em: https://unsplash.com/photos/PZzbPYP2mTk
 Fotos da biblioteca:
@@ -9,3 +12,9 @@ Fotos do astronauta:
     Jean Beaufort, disponível em: http://www.publicdomainpictures.net/view-image.php?image=181684&picture=astronaut-in-space
 Fotos do relógio:
     Vera Kratochvil, disponível em: http://www.publicdomainpictures.net/view-image.php?image=10690&picture=prague-astronomical-clock-detail
+FullPage.js por:
+    https://alvarotrigo.com/fullPage/
+Normalize por:
+    https://necolas.github.io/normalize.css/
+jQuery
+bootstrap

@@ -1,0 +1,183 @@
+/*
+ *
+ * Configurações gerais
+ *
+ */
+
+html, body {
+    font-family:'Open Sans', sans-serif;
+}
+
+.bg-danger {
+    background-color:#c42e3d !important;
+}
+
+/*
+ * 
+ * Configurações do manual
+ *
+ */
+
+.section.manual {
+    background-color:#eee8df;
+    font-size:1.6rem;
+}
+
+/* dá margem para que o texto nos slides não fiquem abaixo das setas */
+.section.manual div.slide {
+    padding-left:5rem;
+    padding-right:5rem;
+}
+
+.section.manual h1 {
+    font-size:6rem;
+    text-shadow:0.2rem 0.2rem 0.2rem #aaa;
+}
+
+/* define as cores do cabeçalho, no manual */
+.redLetter {
+    color:#9a3030;
+}
+
+.greenLetter {
+    color:#1e7c20;
+}
+
+.blueLetter {
+    color:#2f748e;
+}
+
+.section.manual small {
+    font-size:1.4rem;
+    /* mexe com as linhas em volta do texto "O Jogo" */
+    display:grid;
+    grid-template-columns: minmax(2rem, 1fr) auto minmax(2rem, 1fr);
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    width: 100%;
+    padding-left:40rem;
+    padding-right:40rem;
+}
+
+/* desenha as linhas em volta do texto "O Jogo" */
+.section.manual small:before, .section.manual small:after {
+    content: '';
+    border-top:0.1rem solid #555;
+    padding-bottom:0.5rem;
+    border-bottom:0.1rem solid #555;
+}
+
+/* estabelece a cor dos links do manual */
+.link-manual {
+    color:#d58717;
+}
+
+.link-manual:hover {
+    color:#ba8232;
+}
+
+/* muda a cor da seta à esquerda */
+.fp-controlArrow.fp-prev {
+    border-color:transparent #333 transparent transparent;
+}
+
+/* muda a cor da seta à direita */
+.fp-controlArrow.fp-next {
+    border-color:transparent transparent transparent #333;
+}
+
+/*
+ *
+ * Configurações do meio
+ *
+ */
+
+/* define as cores de fundo referentes a cada desafio */
+
+.conteudoPrincipal p {
+    font-size:3.5rem;
+}
+
+.btn-lg {
+    font-size:1.5rem;
+    padding:0.75rem 1.25rem;
+}
+
+/*
+ * 
+ * Configurações de footer
+ *
+ */
+
+/* configurações gerais de cor e espaçamento do footer */
+
+footer {
+    background-color:rgba(52, 58, 64, 0.7);
+}
+
+/* configuração do tamanho da fonte do "desenvolvido por..." */
+
+footer p {
+    font-size:1.5rem;
+}
+
+/* configuração do tamanho do MegaFísica escrito no logo */
+
+footer p.logo {
+    font-size:4rem;
+    text-shadow:0.1rem 0.1rem 0.5rem #333;
+}
+
+/* configurações da cor do link do MegaFísica escrito no logo */
+
+footer a, footer a:hover {
+    color:#eee;
+    text-decoration:none;
+    text-shadow:0.1rem 0.1rem 0.1rem #333;
+}
+
+footer a:hover {
+    color:#ddd;
+}
+
+/* define a posição das imagens de fundo */
+
+ .section.footer {
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+.section.footer.primeiroDesafio,
+    .section.footer.segundoDesafio,
+    .section.footer.terceiroDesafio {
+        background-position:center center;
+}
+
+.section.footer.paginaPrincipal,
+    .section.footer.paginaSobre {
+        background-position:center center;
+}
+
+/* carrega as imagens de fundo */
+
+.section.footer.primeiroDesafio {
+    background-image:url('../img/img_primeiro.jpg');            
+}
+
+.section.footer.segundoDesafio {
+    background-image:url('../img/img_segundo.jpg');     
+}
+
+.section.footer.terceiroDesafio {
+    background-image:url('../img/img_terceiro.jpg');         
+}
+
+.section.footer.paginaPrincipal {
+    background-image:url('../img/img_index.jpg');           
+}
+
+.section.footer.paginaSobre {
+    background-image:url('../img/img_sobre.jpg');             
+}

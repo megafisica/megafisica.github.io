@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>MegaFísica</title>
+    <meta name="author" content="Caio Sabadin" />
+    <meta name="description" content="Jogo 'Mega Senha' versão de física" />
+    <meta name="keywords" content="megasenha, fisica, megafisica, cefet, mafia" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/css/fullpage.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" /> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <script type="text/javascript" src="src/js/jquery.js"></script>
+    <script type="text/javascript" src="src/js/fullpage.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                autoScrolling: true,
+                scrollHorizontally: true,
+                controlArrows: true,
+                verticalCentered: true,
+                slidesNavigation: true
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="fullpage" class="text-center">
+
+        <div class="section manual">
+            
+            <div class="slide">
+                    <div class="pb-5">
+                        <h1 class="text-uppercase font-weight-bold"><span class="blueLetter">Mega</span><span class="redLetter">Física</span></h1>
+                        <p><small class="text-uppercase font-weight-bold greenLetter">O Jogo</small></p>
+                    </div>
+                    <p>Elaborado pelos alunos do projeto MAFIA (Muitas Atividades de Física Interativa e Aplicada.)</p>
+                    <p class="pb-5">CEFET/RJ &ndash; UnED Nova Iguaçu, 2014.</p>
+                    <p>Para ler o manual, clique na seta à direita.</p>
+                    <p>Para ler sobre o <span class="font-italic">site</span>, <a class="link-manual" href="about.html">clique aqui.</a></p>
+                    <p>Quando estiver preparado para jogar, role a tela para baixo!</p>
+            </div>
+            
+            <div class="slide">
+                <p class="pb-2">Este é um jogo cooperativo, para ser jogado em dupla: chame um amigo para jogar com você!</p>
+                <p class="pb-5"><span class="far fa-handshake h1"></span></p>
+                <p class="pb-2">Se você estiver em um dispositivo móvel, jogue com a tela na vertical.</p>
+                <p><span class="fas fa-mobile-alt h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Requisitos do jogo</p>
+                <p>Possuir conhecimento prévio acerca de assuntos relacionados à Física do Ensino Médio.</p>
+                <p class="pt-3"><span class="fab fa-react h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Objetivo do jogo</p>
+                <p>O Jogador 1 verá, na tela do computador, uma palavra ou expressão secreta relativa à física.</p>
+                <p>Sem poder olhar a tela, o Jogador 2 deverá descobrir qual é esta palavra ou expressão.</p>
+                <p>O Jogador 1, então, deverá dar dicas ao Jogador 2 para que este possa cumprir seu objetivo.</p>
+                <p>Para ganhar, os jogadores devem acertar todas as palavras do desafio escolhido antes que o tempo acabe.</p>
+                <p class="pt-5"><span class="far fa-clock h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Estrutura do jogo</p>
+                <p class="pb-5">Disposto em três desafios, o MegaFísica reúne conteúdos dos três anos do Ensino Médio da seguinte forma:</p>
+                <p>Primeiro Desafio: conteúdos de mecânica.</p>
+                <p class="pb-3"><span class="fas fa-cogs h1"></span></p>
+                <p>Segundo Desafio: Ondas, Física Térmica e Óptica, além de todo conteúdo do Primeiro Desafio.</p>
+                <p class="pb-3"><span class="fas fa-thermometer-half h1"></span></p>
+                <p>Terceiro Desafio: Eletricidade, Magnetismo e Física Moderna, além de todo conteúdo dos desafios anteriores.</p>
+                <p class="pb-3"><span class="fas fa-plug h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Estrutura do jogo</p>
+                <p class="pb-3">A escolha do desafio é associada ao conhecimento de Física que a dupla possui no momento.</p>
+                <p>Dentro de cada desafio, há três níveis.</p>
+                <p>Em cada nível, a dupla tem 90 segundos para descobrir as três palavras ou expressões secretas.</p>
+                <p>Quando a terceira palavra ou expressão é descoberta, a dupla passa para o nível seguinte.</p>
+                <p class="pt-5"><span class="fas fa-forward h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
+                <p>É necessária uma dupla de jogadores.</p>
+                <p>Só o Jogador 1 terá acesso à tela do jogo, na qual aparece a palavra ou expressão secreta relacionada à física.</p>
+                <p>O Jogador 1 dará uma dica, de <span class="font-italic"><u>apenas uma única palavra</u></span>, ao Jogador 2, para ajudá-lo a descobrir a palavra ou expressão secreta.</p>
+                <p>A palavra dada como dica deve, naturalmente, ser relacionada à palavra ou expressão secreta da tela.</p>
+                <p>A cada dica dada pelo Jogador 1, o Jogador 2 deve tentar adivinhar a palavra ou expressão.</p>
+                <p>O Jogador 1 fornecerá dicas até o Jogador 2 acertar, ou o tempo acabar.</p>
+                <p class="pt-5"><span class="far fa-question-circle h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
+                <p>Se o Jogador 2 acertar, o outro deve clicar no botão da tela do jogo para passar à próxima palavra.</p>
+                <p>Não devem ser dadas mais de uma dica por tentativa de adivinhação.</p>
+                <p>Estas dicas não devem ser de mais de uma palavra.</p>
+                <p class="pt-5"><span class="fas fa-exclamation-triangle h1"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
+                <p>A dupla não pode ultrapassar o tempo de um minuto e trinta segundos em cada nível.</p>
+                <p class="pb-5">Ganha-se o jogo caso se consiga adivinhar, sem estourar o tempo, todas as palavras do terceiro nível do desafio escolhido.</p>
+                <p>Preparados? Role a página para baixo para jogar!</p>
+                <p class="pt-5"><span class="far fa-play-circle h1"></span></p>
+            </div>
+        </div>
+
+        <div class="text-dark section active conteudoPrincipal bg-light">
+            
+        </div>
+
+        <div class="section footer paginaSobre">
+            <footer class="text-light p-4">
+                    <p class="logo font-weight-bold"><a href="about.html" title="Clique para ler sobre o site...">MegaFísica</a></p>
+                    <p class="logo font-weight-bold"><span id="dataJogo"></span></p>
+                    <p>Desenvolvido por:</p>
+                    <p>MAFIA (CEFET/RJ &ndash; UnED Nova Iguaçu)</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
