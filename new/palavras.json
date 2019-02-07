@@ -1,0 +1,527 @@
+[
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Aceleração da Gravidade"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Corpo extenso"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Escalar"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Inércia"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Massa"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Movimento Retilíneo"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Newton"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Pêndulo"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Referencial"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Trajetória"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Variação de Tempo"
+	},
+	{
+		"nivel": "1",
+		"desafio": "1",
+		"tema": "Vetor"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Aceleração"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Força"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Força de Atrito"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Hooke"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Kepler"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Lançamento"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Plano inclinado"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Potência"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Queda livre"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Resistência do Ar"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Torricelli"
+	},
+	{
+		"nivel": "2",
+		"desafio": "1",
+		"tema": "Trabalho"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Arquimedes"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Cinemática"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Conservação de energia"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Densidade"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Empuxo"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Energia Cinética"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Energia Potencial Gravitacional"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Força Centrípeta"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Galileu"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Impulso"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Quantidade de movimento"
+	},
+	{
+		"nivel": "3",
+		"desafio": "1",
+		"tema": "Tração"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Amplitude"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Comprimento de onda"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Difração"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Espectro eletromagnético"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Frequência"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Interferência"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Onda"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Onda eletromagnética"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Período"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Propagação"
+	},
+	{
+		"nivel": "1",
+		"desafio": "2",
+		"tema": "Ressonância"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Calor"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Capacidade térmica"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Condução Térmica"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Corrente de convecção"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Dilatação"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Energia interna"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Joule"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Máquina Térmica"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Mudança de estado"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Pressão"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Temperatura"
+	},
+	{
+		"nivel": "2",
+		"desafio": "2",
+		"tema": "Transformação gasosa"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Câmara escura"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Espelho Côncavo"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Espelho Convexo"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Espelho plano"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Foco"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Gauss"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Imagem Invertida"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Lente esférica"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Prismas"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Raio de luz"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Reflexão"
+	},
+	{
+		"nivel": "3",
+		"desafio": "2",
+		"tema": "Refração"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "ímã"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Bússola"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Blindagem eletroestática"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Carga Elétrica"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Condutor elétrico"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Força Elétrica"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Indução eletromagnética"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Pilha"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Repulsão"
+	},
+	{
+		"nivel": "1",
+		"desafio": "3",
+		"tema": "Tesla"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Bóson de Higgs"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Campo magnético"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Circuito Elétrico"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Corrente Elétrica"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Coulomb"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Faraday"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Linha de força"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Ohm"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Potencial Elétrico"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Região Equipotencial"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Resistência Elétrica"
+	},
+	{
+		"nivel": "2",
+		"desafio": "3",
+		"tema": "Voltímetro"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Ampère"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Antipartícula"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Einstein"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Energia Elétrica"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Fóton"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Fissão Nuclear"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Gerador"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "kWh"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "LHC"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Potência Elétrica"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Quark"
+	},
+	{
+		"nivel": "3",
+		"desafio": "3",
+		"tema": "Resistor Equivalente"
+	}
+]
