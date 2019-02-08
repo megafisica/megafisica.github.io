@@ -2,6 +2,19 @@ function carregaFooter() {
     $('#dataJogo').text("2014 - " + (new Date()).getFullYear());
 }
 
+function carregaPagina() {
+    /* Liga o plugin JavaScript responsável pela navegação da página */
+    $('#fullpage').fullpage({
+        autoScrolling: true,
+        controlArrows: true,
+        verticalCentered: true,
+        slidesNavigation: true
+    });
+
+    /* Mostra a data no rodapé */
+    carregaFooter();
+}
+
 function gameOver(hasVencido, numeroDesafio) {
     var mensagem = "";
     $("#tempo").css('display', 'none');
@@ -35,6 +48,70 @@ function gameOver(hasVencido, numeroDesafio) {
      * deve ser tornada falsa, ou seja, deve ser inativada.
      */
     return false;
+}
+
+/*
+ * Este é o trecho do código responsável por operar o tempo, e de
+ * verificar se este não se esgotou, o que fará com que os
+ * jogadores percam.
+ */
+function operaRelogio(informacoes) {
+    /* Se o jogo não começou, não faz sentido mostrar o tempo. */
+    console.log(informacoes.iniciouJogo);
+    if(informacoes.iniciouJogo) {
+        $("#tempo").css('display', 'inline');
+        informacoes.temporizador--;
+        var tempoRestante = "Restam: " + informacoes.temporizador + "s";
+        $("#tempo").html(tempoRestante);
+        if(informacoes.temporizador==0) {
+            /* carrega mensagens de derrota quando zera o tempo */
+            informacoes.iniciouJogo = gameOver(false, informacoes.desafio);
+        }
+    }
+}
+
+/*
+ * Este é o trecho do código responsável por passar de palavra à
+ * palavra, e, consequentemente, também de nível a nível.
+ */
+function operaNiveis(informacoes) {
+    
+    /*
+     * Se o jogo ainda não iniciou, então, ao clicar neste botão, o
+     * o jogo é iniciado.
+     */
+
+    if(!informacoes.iniciouJogo) {
+        informacoes.iniciouJogo = true;
+        $("#botao").html(`
+            <span class="fas fa-fast-forward"></span> Próxima Palavra
+        `);
+    }
+    
+    /*
+     * Se o nível passa a ser igual a 4, é sinal de que os usuários
+     * venceram os 3 níveis e, por conseguinte, o jogo.
+     * 
+     * Senão, ele irá chamar as palavras daquele desafio, naquele
+     * nível.
+     */
+
+    if(informacoes.nivel==4) {
+        informacoes.iniciouJogo = gameOver(true, informacoes.desafio);
+    } else {
+        var mensagem = "Nível " + informacoes.nivel + ", " + informacoes.numero + "a. palavra secreta:";
+        $("#mensagemPalavra").text(mensagem);
+
+        /*
+         * Esta linha carrega as palavras ou expressoes secretas e
+         * a função processaJogo é a responsavél por operar estas
+         * palavras na tela, e por verificar se o usuário ganhou
+         * ou não.
+         */
+        $.getJSON("src/senhas.json", function(dados) {
+            processaJogo(dados, informacoes)   
+        });
+    }
 }
 
 /*

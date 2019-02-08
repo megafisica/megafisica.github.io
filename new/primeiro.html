@@ -16,22 +16,12 @@
     <script type="text/javascript" src="src/js/fullpage.min.js"></script>
     <script type="text/javascript">
         $(function() {
-
-            /* Liga o plugin JavaScript responsável pela navegação da página */
-            $('#fullpage').fullpage({
-                autoScrolling: true,
-                controlArrows: true,
-                verticalCentered: true,
-                slidesNavigation: true
-            });
-
-            /* Mostra a data no rodapé */
-            carregaFooter();
+            carregaPagina();
 
             /* Declara variáveis importantes para o jogo */
-            var iniciouJogo = false;
-            var temporizador = 91;
             var informacoes = {
+                iniciouJogo: false,
+                temporizador: 91,
                 desafio: 1,
                 nivel: 1,
                 numero: 1,
@@ -44,62 +34,16 @@
              * jogadores percam.
              */
             setInterval(function() {
-                /* Se o jogo não começou, não faz sentido mostrar o tempo. */
-                if(iniciouJogo) {
-                    $("#tempo").css('display', 'inline');
-                    temporizador--;
-                    var tempoRestante = "Tempo restante: " + temporizador + "s";
-                    $("#tempo").html(tempoRestante);
-                    if(temporizador==0) {
-                        /* carrega mensagens de derrota quando zera o tempo */
-                        iniciouJogo = gameOver(false, informacoes.desafio);
-                    }
-                }
+                operaRelogio(informacoes)
             }, 1000);
 
             /*
              * Este é o trecho do código responsável por passar de palavra à
              * palavra, e, consequentemente, também de nível a nível.
              */
-
+            
             $("#botao").click(function() {
-                
-                /*
-                 * Se o jogo ainda não iniciou, então, ao clicar neste botão, o
-                 * o jogo é iniciado.
-                 */
-                if(!iniciouJogo) {
-                    iniciouJogo = true;
-                    $("#botao").html(`
-                        <span class="fas fa-fast-forward"></span> Próxima Palavra
-                    `);
-                }
-
-                /*
-                 * Se o nível passa a ser igual a 4, é sinal de que os usuários
-                 * venceram os 3 níveis e, por conseguinte, o jogo.
-                 * 
-                 * Senão, ele irá chamar as palavras daquele desafio, naquele
-                 * nível.
-                 */
-                if(informacoes.nivel==4) {
-                    iniciouJogo = gameOver(true, informacoes.desafio);
-                } else {
-                    var mensagem = "Nível " + informacoes.nivel + ", " + informacoes.numero + "a. palavra secreta:";
-                    $("#mensagemPalavra").text(mensagem);
-
-                    /*
-                     * Esta linha carrega as palavras ou expressoes secretas e
-                     * a função processaJogo é a responsavél por operar estas
-                     * palavras na tela, e por verificar se o usuário ganhou
-                     * ou não.
-                     */
-                    $.getJSON("src/senhas.json", function(dados) {
-                        processaJogo(dados, informacoes)   
-                    });
-                }
-
-
+                operaNiveis(informacoes);
             });
         });
     </script>
