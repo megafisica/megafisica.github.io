@@ -19,8 +19,7 @@ html, body {
  */
 
 .section.manual {
-    background-color:#eee8df;
-    font-size:1.6rem;
+    font-size:1.4rem;
 }
 
 /* dá margem para que o texto nos slides não fiquem abaixo das setas */
@@ -30,7 +29,7 @@ html, body {
 }
 
 .section.manual h1 {
-    font-size:6rem;
+    font-size:4rem;
     text-shadow:0.2rem 0.2rem 0.2rem #aaa;
 }
 
@@ -49,15 +48,6 @@ html, body {
 
 .section.manual small {
     font-size:1.4rem;
-}
-
-/* estabelece a cor dos links do manual */
-.link-manual {
-    color:#d58717;
-}
-
-.link-manual:hover {
-    color:#ba8232;
 }
 
 /* muda a cor da seta à esquerda */

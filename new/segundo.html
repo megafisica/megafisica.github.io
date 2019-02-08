@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
-    <title>MegaFísica</title>
+    <title>MegaFísica - Desafio 2</title>
     <meta name="author" content="Caio Sabadin" />
     <meta name="description" content="Jogo 'Mega Senha' versão de física" />
     <meta name="keywords" content="megasenha, fisica, megafisica, cefet, mafia" />
@@ -12,15 +12,94 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     <link rel="stylesheet" href="src/css/main.css" />
     <script type="text/javascript" src="src/js/jquery.js"></script>
+    <script type="text/javascript" src="src/js/core.js"></script>
     <script type="text/javascript" src="src/js/fullpage.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(function() {
+
+            /* Liga o plugin JavaScript responsável pela navegação da página */
             $('#fullpage').fullpage({
                 autoScrolling: true,
-                scrollHorizontally: true,
                 controlArrows: true,
                 verticalCentered: true,
                 slidesNavigation: true
+            });
+
+            /* Mostra a data no rodapé */
+            carregaFooter();
+
+            /* Declara variáveis importantes para o jogo */
+            var iniciouJogo = false;
+            var temporizador = 91;
+            var informacoes = {
+                desafio: 2,
+                nivel: 1,
+                numero: 1,
+                palavrasUsadas: new Array()
+            };
+
+            /*
+             * Este é o trecho do código responsável por operar o tempo, e de
+             * verificar se este não se esgotou, o que fará com que os
+             * jogadores percam.
+             */
+            setInterval(function() {
+                /* Se o jogo não começou, não faz sentido mostrar o tempo. */
+                if(iniciouJogo) {
+                    $("#tempo").css('display', 'inline');
+                    temporizador--;
+                    var tempoRestante = "Tempo restante: " + temporizador + "s";
+                    $("#tempo").html(tempoRestante);
+                    if(temporizador==0) {
+                        /* carrega mensagens de derrota quando zera o tempo */
+                        iniciouJogo = gameOver(false, informacoes.desafio);
+                    }
+                }
+            }, 1000);
+
+            /*
+             * Este é o trecho do código responsável por passar de palavra à
+             * palavra, e, consequentemente, também de nível a nível.
+             */
+
+            $("#botao").click(function() {
+                
+                /*
+                 * Se o jogo ainda não iniciou, então, ao clicar neste botão, o
+                 * o jogo é iniciado.
+                 */
+                if(!iniciouJogo) {
+                    iniciouJogo = true;
+                    $("#botao").html(`
+                        <span class="fas fa-fast-forward"></span> Próxima Palavra
+                    `);
+                }
+
+                /*
+                 * Se o nível passa a ser igual a 4, é sinal de que os usuários
+                 * venceram os 3 níveis e, por conseguinte, o jogo.
+                 * 
+                 * Senão, ele irá chamar as palavras daquele desafio, naquele
+                 * nível.
+                 */
+                if(informacoes.nivel==4) {
+                    iniciouJogo = gameOver(true, informacoes.desafio);
+                } else {
+                    var mensagem = "Nível " + informacoes.nivel + ", " + informacoes.numero + "a. palavra secreta:";
+                    $("#mensagemPalavra").text(mensagem);
+
+                    /*
+                     * Esta linha carrega as palavras ou expressoes secretas e
+                     * a função processaJogo é a responsavél por operar estas
+                     * palavras na tela, e por verificar se o usuário ganhou
+                     * ou não.
+                     */
+                    $.getJSON("src/senhas.json", function(dados) {
+                        processaJogo(dados, informacoes)   
+                    });
+                }
+
+
             });
         });
     </script>
@@ -28,96 +107,95 @@
 <body>
     <div id="fullpage" class="text-center">
 
-        <div class="section manual">
+        <div class="section manual bg-light text-black">
             
             <div class="slide">
-                    <div class="pb-5">
+                    <div class="pb-4">
                         <h1 class="text-uppercase font-weight-bold"><span class="blueLetter">Mega</span><span class="redLetter">Física</span></h1>
                         <p><small class="text-uppercase font-weight-bold greenLetter">O Jogo</small></p>
                     </div>
                     <p>Elaborado pelos alunos do projeto MAFIA (Muitas Atividades de Física Interativa e Aplicada.)</p>
-                    <p class="pb-5">CEFET/RJ &ndash; UnED Nova Iguaçu, 2014.</p>
+                    <p class="pb-4">CEFET/RJ &ndash; UnED Nova Iguaçu, 2014.</p>
                     <p>Para ler o manual, clique na seta à direita.</p>
-                    <p>Para ler sobre o <span class="font-italic">site</span>, <a class="link-manual" href="about.html">clique aqui.</a></p>
+                    <p>Para ler sobre o <span class="font-italic">site</span>, <a href="about.html">clique aqui.</a></p>
                     <p>Quando estiver preparado para jogar, role a tela para baixo!</p>
             </div>
             
             <div class="slide">
+                <p class="pb-2">Se você estiver em um dispositivo móvel, jogue com a tela na vertical.</p>
+                <p class="pb-5"><span class="fas fa-mobile-alt h1"></span></p>
                 <p class="pb-2">Este é um jogo cooperativo, para ser jogado em dupla: chame um amigo para jogar com você!</p>
                 <p class="pb-5"><span class="far fa-handshake h1"></span></p>
-                <p class="pb-2">Se você estiver em um dispositivo móvel, jogue com a tela na vertical.</p>
-                <p><span class="fas fa-mobile-alt h1"></span></p>
+                <p class="pb-2">Lembre-se, os dois devem ter conhecimento prévio dos assuntos de Física do Ensino Médio.</p>
+                <p class="pb-5"><span class="fab fa-react h1"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Requisitos do jogo</p>
-                <p>Possuir conhecimento prévio acerca de assuntos relacionados à Física do Ensino Médio.</p>
-                <p class="pt-3"><span class="fab fa-react h1"></span></p>
-            </div>
-
-            <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Objetivo do jogo</p>
-                <p>O Jogador 1 verá, na tela do computador, uma palavra ou expressão secreta relativa à física.</p>
-                <p>Sem poder olhar a tela, o Jogador 2 deverá descobrir qual é esta palavra ou expressão.</p>
-                <p>O Jogador 1, então, deverá dar dicas ao Jogador 2 para que este possa cumprir seu objetivo.</p>
-                <p>Para ganhar, os jogadores devem acertar todas as palavras do desafio escolhido antes que o tempo acabe.</p>
+                <p class="pb-5 h3 font-weight-bold">Objetivo do jogo</p>
+                <p>O Jogador 1 verá, na tela, uma palavra ou expressão secreta relativa à física.</p>
+                <p>O Jogador 2 deverá descobrir qual é esta, sem poder olhar a tela.</p>
+                <p>Para isto, o Jogador 1 deverá dar dicas ao Jogador 2.</p>
+                <p>Os jogadores ganham caso acertem todas as palavras antes do tempo acabar.</p>
                 <p class="pt-5"><span class="far fa-clock h1"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Estrutura do jogo</p>
-                <p class="pb-5">Disposto em três desafios, o MegaFísica reúne conteúdos dos três anos do Ensino Médio da seguinte forma:</p>
-                <p>Primeiro Desafio: conteúdos de mecânica.</p>
-                <p class="pb-3"><span class="fas fa-cogs h1"></span></p>
-                <p>Segundo Desafio: Ondas, Física Térmica e Óptica, além de todo conteúdo do Primeiro Desafio.</p>
-                <p class="pb-3"><span class="fas fa-thermometer-half h1"></span></p>
-                <p>Terceiro Desafio: Eletricidade, Magnetismo e Física Moderna, além de todo conteúdo dos desafios anteriores.</p>
-                <p class="pb-3"><span class="fas fa-plug h1"></span></p>
+                <p class="pb-5 h3 font-weight-bold">Estrutura do jogo</p>
+                <p>Disposto em três desafios, o MegaFísica reúne conteúdos dos três anos do Ensino Médio.</p>
+                <p class="pb-3">A escolha do desafio é associada ao conhecimento de Física que a dupla possui:</p>
+                <p>Primeiro Desafio: conteúdos de Mecânica.</p>
+                <p>Segundo Desafio: Ondas, Física Térmica e Óptica, e todo conteúdo anterior.</p>
+                <p class="pb-5">Terceiro Desafio: Eletricidade, Magnetismo e Física Moderna, e todo conteúdo anterior.</p>
+                <p class="h1"><span class="fas fa-cogs"></span> <span class="fas fa-thermometer-half"></span> <span class="fas fa-plug"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Estrutura do jogo</p>
-                <p class="pb-3">A escolha do desafio é associada ao conhecimento de Física que a dupla possui no momento.</p>
-                <p>Dentro de cada desafio, há três níveis.</p>
-                <p>Em cada nível, a dupla tem 90 segundos para descobrir as três palavras ou expressões secretas.</p>
-                <p>Quando a terceira palavra ou expressão é descoberta, a dupla passa para o nível seguinte.</p>
+                <p class="pb-5 h3 font-weight-bold">Estrutura do jogo</p>
+                <p>Cada um dos desafios dividem-se em três níveis.</p>
+                <p>A cada nível, a dupla tem 90 segundos para descobrir três palavras ou expressões secretas.</p>
+                <p>Quando a terceira é descoberta, a dupla avança ao nível seguinte.</p>
                 <p class="pt-5"><span class="fas fa-forward h1"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
+                <p class="pb-5 h3 font-weight-bold">Dinâmica do jogo</p>
                 <p>É necessária uma dupla de jogadores.</p>
-                <p>Só o Jogador 1 terá acesso à tela do jogo, na qual aparece a palavra ou expressão secreta relacionada à física.</p>
-                <p>O Jogador 1 dará uma dica, de <span class="font-italic"><u>apenas uma única palavra</u></span>, ao Jogador 2, para ajudá-lo a descobrir a palavra ou expressão secreta.</p>
-                <p>A palavra dada como dica deve, naturalmente, ser relacionada à palavra ou expressão secreta da tela.</p>
-                <p>A cada dica dada pelo Jogador 1, o Jogador 2 deve tentar adivinhar a palavra ou expressão.</p>
-                <p>O Jogador 1 fornecerá dicas até o Jogador 2 acertar, ou o tempo acabar.</p>
+                <p>Só o Jogador 1 terá acesso à tela na qual aparece a palavra ou expressão secreta.</p>
+                <p>Para ajudar o Jogador 2 a descobri-la, o Jogador 1 dará uma dica.</p>
+                <p>Esta dica deve ser apenas uma única palavra.</p>
+                <p>Esta dica deve ser relacionada à palavra ou expressão da tela.</p>
+                <p>A cada dica dada, o Jogador 2 deve tentar adivinhar a palavra ou expressão.</p>
+                <p>O Jogador 1 fornecerá dicas até o Jogador 2 acertar, ou até o tempo acabar.</p>
                 <p class="pt-5"><span class="far fa-question-circle h1"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
-                <p>Se o Jogador 2 acertar, o outro deve clicar no botão da tela do jogo para passar à próxima palavra.</p>
+                <p class="pb-5 h3 font-weight-bold">Dinâmica do jogo</p>
+                <p>Se o Jogador 2 acertar, o outro deve clicar no botão para ver a próxima palavra.</p>
                 <p>Não devem ser dadas mais de uma dica por tentativa de adivinhação.</p>
                 <p>Estas dicas não devem ser de mais de uma palavra.</p>
                 <p class="pt-5"><span class="fas fa-exclamation-triangle h1"></span></p>
             </div>
 
             <div class="slide">
-                <p class="pb-5 h1 font-weight-bold">Dinâmica do jogo</p>
-                <p>A dupla não pode ultrapassar o tempo de um minuto e trinta segundos em cada nível.</p>
-                <p class="pb-5">Ganha-se o jogo caso se consiga adivinhar, sem estourar o tempo, todas as palavras do terceiro nível do desafio escolhido.</p>
+                <p class="pb-5 h3 font-weight-bold">Dinâmica do jogo</p>
+                <p>A dupla não pode ultrapassar o tempo de cada nível, de um minuto e trinta segundos.</p>
+                <p class="pb-5">Os jogadores ganham caso acertem todas as palavras do terceiro nível antes do tempo acabar.</p>
                 <p>Preparados? Role a página para baixo para jogar!</p>
                 <p class="pt-5"><span class="far fa-play-circle h1"></span></p>
             </div>
         </div>
 
         <div class="text-light section active conteudoPrincipal bg-danger">
-            <p class="pb-4">Ondas, Física Térmica e Óptica</p>
-            <p class="pb-4"><a class="btn btn-light btn-lg" role="button" href="#"><span class="far fa-play-circle"></span> Iniciar</a></p>
-            <p id="exibePalavra">Teste</p>
-            <p class="pb-5" id="tempo">90s</p>
-            <p class="pt-5"><a class="btn btn-light btn-lg" role="button" href="index.html"><span class="fas fa-home"></span> Página inicial</a></p>
+            <p>Ondas, Física Térmica e Óptica</p>
+            <p class="pb-4"><a id="botao" class="btn btn-light btn-lg" role="button" href="#"><span class="far fa-play-circle"></span> Iniciar</a></p>
+            <p id="mensagemPalavra"></p>
+            <p id="exibePalavra"></p>
+            <p class="pb-5" id="tempo"></p>
+            <p class="pt-5">
+                <a class="btn btn-info btn-lg" role="button" href="primeiro.html"><span class="far fa-play-circle"></span> Primeiro Desafio</a>
+                <a class="btn btn-success btn-lg" role="button" href="terceiro.html"><span class="far fa-play-circle"></span> Terceiro Desafio</a>
+            </p>
         </div>
 
         <div class="section footer segundoDesafio">
