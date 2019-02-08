@@ -12,16 +12,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     <link rel="stylesheet" href="src/css/main.css" />
     <script type="text/javascript" src="src/js/jquery.js"></script>
+    <script type="text/javascript" src="src/js/core.js"></script>
     <script type="text/javascript" src="src/js/fullpage.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(function() {
+
+            /* Liga o plugin JavaScript responsável pela navegação da página */
             $('#fullpage').fullpage({
                 autoScrolling: true,
-                scrollHorizontally: true,
                 controlArrows: true,
                 verticalCentered: true,
                 slidesNavigation: true
             });
+
+	    /* Mostra a data no rodapé */
+            carregaFooter();
         });
     </script>
 </head>
