@@ -12,69 +12,130 @@ html, body {
     background-color:#c42e3d !important;
 }
 
+.text-twilight {
+    color:#5f35dc;
+}
+
+.text-caution {
+    color:#dc4d35;
+}
+
 /*
  * 
- * Configurações do manual
+ * Configurações do manual (Desktop)
  *
  */
 
-.section.manual {
-    font-size:1.4rem;
+@media only screen and (min-width:1000px) {
+    .section.manual {
+        font-size:1.8rem;
+    }
+
+    /* dá margem para que o texto nos slides não fiquem abaixo das setas */
+    .section.manual div.slide {
+        padding-left:5rem;
+        padding-right:5rem;
+    }
+
+    .section.manual h1 {
+        font-size:4rem;
+        text-shadow:0.1rem 0.1rem 0.2rem #222;
+    }
+
+    .section.manual small {
+        font-size:1.4rem;
+    }
+
+    /* reconfigura os cabeçalhos do bootstrap */
+    .h3 {
+        font-size:2.5rem;
+    }
+    
+    .h1 {
+        font-size:3.5rem;
+    }
 }
 
-/* dá margem para que o texto nos slides não fiquem abaixo das setas */
-.section.manual div.slide {
-    padding-left:5rem;
-    padding-right:5rem;
-}
+/*
+ * 
+ * Configurações do manual (Mobile)
+ *
+ */
 
-.section.manual h1 {
-    font-size:4rem;
-    text-shadow:0.2rem 0.2rem 0.2rem #aaa;
-}
+ @media only screen and (max-width:999px) {
+    .section.manual {
+        font-size:3rem;
+    }
 
-/* define as cores do cabeçalho, no manual */
-.redLetter {
-    color:#9a3030;
-}
+    /* dá margem para que o texto nos slides não fiquem abaixo das setas */
+    .section.manual div.slide {
+        padding-left:6rem;
+        padding-right:6rem;
+    }
 
-.greenLetter {
-    color:#1e7c20;
-}
+    .section.manual h1 {
+        font-size:5rem;
+        text-shadow:0.1rem 0.1rem 0.2rem #222;
+    }
 
-.blueLetter {
-    color:#2f748e;
-}
+    .section.manual small {
+        font-size:1.9rem;
+    }
 
-.section.manual small {
-    font-size:1.4rem;
+    /* reconfigura os cabeçalhos do bootstrap */
+    .h3 {
+        font-size:3rem;
+    }
+    
+    .h1 {
+        font-size:5rem;
+    }
 }
 
 /* muda a cor da seta à esquerda */
 .fp-controlArrow.fp-prev {
     border-color:transparent #333 transparent transparent;
+    border-width: 29px 27px 29px 0;
 }
 
 /* muda a cor da seta à direita */
 .fp-controlArrow.fp-next {
     border-color:transparent transparent transparent #333;
+    border-width: 29px 0 27px 29px;
 }
 
 /*
  *
- * Configurações do meio
+ * Configurações do meio (Desktop)
  *
  */
 
-/* define as cores de fundo referentes a cada desafio */
+@media only screen and (min-width:1000px) {
+    .conteudoPrincipal p {
+        font-size:3.5rem;
+    }
 
-.conteudoPrincipal p {
-    font-size:3.5rem;
+    .btn-lg {
+        font-size:1.5rem;
+        padding:0.75rem 1.25rem;
+    }
 }
 
-.btn-lg {
-    font-size:1.5rem;
-    padding:0.75rem 1.25rem;
+/*
+ *
+ * Configurações do meio (Mobile)
+ *
+ */
+
+@media only screen and (max-width:999px) {
+    .conteudoPrincipal p {
+        font-size:4.5rem;
+    }
+
+    .btn-lg {
+        font-size:3rem;
+        padding:1.75rem 2.25rem;
+    }
 }
 
 /*
@@ -91,15 +152,32 @@ footer {
 
 /* configuração do tamanho da fonte do "desenvolvido por..." */
 
-footer p {
-    font-size:1.5rem;
+@media only screen and (min-width:1000px) {
+    footer p {
+        font-size:1.5rem;
+    }
+}
+
+@media only screen and (max-width:999px) {
+    footer p {
+        font-size:3rem;
+    }
 }
 
 /* configuração do tamanho do MegaFísica escrito no logo */
 
-footer p.logo {
-    font-size:4rem;
-    text-shadow:0.1rem 0.1rem 0.5rem #333;
+@media only screen and (min-width:1000px) {
+    footer p.logo {
+        font-size:4rem;
+        text-shadow:0.1rem 0.1rem 0.5rem #333;
+    }
+}
+
+@media only screen and (max-width:999px) {
+    footer p.logo {
+        font-size:8rem;
+        text-shadow:0.1rem 0.1rem 0.5rem #333;
+    }
 }
 
 /* configurações da cor do link do MegaFísica escrito no logo */

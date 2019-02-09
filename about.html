@@ -16,41 +16,30 @@
     <script type="text/javascript" src="src/js/fullpage.min.js"></script>
     <script type="text/javascript">
         $(function() {
-
-            /* Liga o plugin JavaScript responsável pela navegação da página */
-            $('#fullpage').fullpage({
-                autoScrolling: true,
-                controlArrows: true,
-                verticalCentered: true,
-                slidesNavigation: true
-            });
-
-	    /* Mostra a data no rodapé */
-            carregaFooter();
+            carregaPagina();
         });
     </script>
 </head>
 <body>
     <div id="fullpage" class="text-center">
 
-        <div class="section manual">
+        <div class="section manual bg-light text-black">
             
             <div class="slide">
-                    <div class="pb-5">
-                        <h1 class="text-uppercase font-weight-bold"><span class="blueLetter">Mega</span><span class="redLetter">Física</span></h1>
-                        <p><small class="text-uppercase font-weight-bold greenLetter">O Jogo</small></p>
+                    <div class="pb-4">
+                        <h1 class="text-uppercase font-weight-bold"><span class="text-info">Mega</span><span class="text-danger">Física</span></h1>
+                        <p><small class="text-uppercase font-weight-bold text-success">O Jogo</small></p>
                     </div>
                     <p>Elaborado pelos alunos do projeto MAFIA (Muitas Atividades de Física Interativa e Aplicada.)</p>
                     <p class="pb-3">CEFET/RJ &ndash; UnED Nova Iguaçu, 2014.</p>
-                    <p>Clique em um dos botões abaixo, ou nas setas laterais, para saber mais sobre:</p>
-                    <p>O projeto MAFIA, o MegaFísica, créditos, aspectos técnicos, licença.</p>
-                    <p class="pt-3">Quando quiser jogar, basta rolar a tela para baixo.</p>
+                    <p>Para ler sobre o projeto, role a tela para o lado.</p>
+                    <p class="pt-3"><a role="button" class="btn btn-primary btn-lg" title="Retorna à página principal" href="index.html"><span class="fas fa-home"></span> Página inicial</a></p>
             </div>
 
             <div class="slide">
                 <p class="pb-5 h3 font-weight-bold">O Projeto MAFIA</p>
                 <p>Falar aqui sobre o MAFIA.</p>
-                <p><span class="fas fa-user-secret h2"></span></p>
+                <p class="pt-5"><span class="fas fa-user-secret h1 text-white"></span></p>
             </div>
 
             <div class="slide">
@@ -58,7 +47,7 @@
                 <p>O MegaFísica é um jogo baseado no Megasenha, baseado, por sua vez, no Password.</p>
                 <p>O projeto foi desenvolvido por (nome dos alunos da MAFIA 2014).</p>
                 <p>A orientadora foi a professora Marta Máximo.</p>
-                <p><span class="fas fa-user-astronaut h2"></span></p>
+                <p class="pt-5"><span class="fab fa-grav h1 text-twilight"></span></p>
             </div>
 
             <div class="slide">
@@ -68,9 +57,14 @@
                 <p>A foto do <a href="segundo.html" title="Clique para ir ao segundo desafio">segundo desafio</a> é de <a href="https://unsplash.com/photos/aHhhdKUP77M" title="Página da foto" target="_blank">Scott Webb</a>, e foi alterada por <a href="https://caio.neocities.org?l=pt" title="Página de Caio Sabadin" target="_blank">Caio Sabadin</a>.</p>
                 <p>A foto do <a href="terceiro.html" title="Clique para ir ao terceiro desafio">terceiro desafio</a> é de <a href="https://unsplash.com/photos/PZzbPYP2mTk" title="Página da foto" target="_blank">Krissia Cruz</a>.</p>
                 <p>A foto da <a href="about.html" title="Clique para ir ao primeiro desafio">página sobre nós</a> é de <a href="https://unsplash.com/photos/ggeZ9oyI-PE" title="Página da foto" target="_blank">Priscilla du Preez</a>.</p>
+                <p class="pt-5"><span class="fas fa-camera-retro h1 text-danger"></span></p>
+            </div>
+
+            <div class="slide">
+                <p class="pb-5 h3 font-weight-bold">Créditos</p>
                 <p>Os ícones utilizados são da <a title="Vai ao Font Awesome 5" target="_blank" href="https://fontawesome.com/">Font Awesome</a>.</p>
                 <p>A fonte utilizada é a <a title="Vai ao Google Fonts" target="_blank" href="https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans">Open Sans</a>, do Google Fonts.</p>
-                <p class="pt-5"><span class="fas fa-camera-retro h2 text-danger"></span></p>
+                <p class="pt-5"><span class="fas fa-file-signature h1 text-dark"></span></p>
             </div>
 
             <div class="slide">
@@ -80,13 +74,16 @@
                 <p>Bibliotecas e frameworks utilizados:</p>
                 <p><a title="Vai à página do Bootstrap" target="_blank" href="https://getbootstrap.com/">Bootstrap</a>, <a title="Vai à página do jQuery" target="_blank" href="https://jquery.com/">jQuery</a>, <a title="Vai à página do fullpage" target="_blank" href="https://alvarotrigo.com/fullPage/">fullPage</a>.</p>
                 <p>O site encontra-se hospedado gratuitamente no <a title="Vai ao GitHub" target="_blank" href="http://github.com/">GitHub</a>.</p>
+                <p class="pt-5"><span class="far fa-keyboard h1 text-muted"></span></p>
             </div>
 
 
             <div class="slide">
                 <p class="pb-5 h3 font-weight-bold">Licença</p>
-                <p>Este site encontra-se sob a licença <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" title="Vai à página da GPL3">GPLv3</a>.</p>
-                <p>Observe que produtos de terceiros estão sob suas respectivas licenças.</p>
+                <p>Produtos de terceiros estão sob suas respectivas licenças.</p>
+                <p>Todo o resto do site encontra-se sob a licença <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" title="Vai à página da GPL3">GPLv3</a>.</p>
+                <p>Pode-se obter o código-fonte <a href="https://github.com/megafisica/megafisica.github.io" title="Página do GitHub" target="_blank">no GitHub do projeto</a></p>
+                <p class="pt-5"><span class="fab fa-github h1 text-info"></span></p>
             </div>
             
         </div>
@@ -96,7 +93,7 @@
             <p class="pb-4"><a class="btn btn-info btn-lg" role="button" href="primeiro.html">Primeiro Desafio</a></p>
             <p class="pb-4"><a class="btn btn-danger btn-lg" role="button" href="segundo.html">Segundo Desafio</a></p>
             <p class="pb-4"><a class="btn btn-success btn-lg" role="button" href="terceiro.html">Terceiro Desafio</a></p>
-            <p class="pt-5"><span class="fab fa-react"></span></p>
+            <p class="pt-5"><span class="fab fa-react text-caution"></span></p>
         </div>
 
         <div class="section footer paginaSobre">
