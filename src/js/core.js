@@ -132,6 +132,13 @@ function randomizer(vetor) {
 }
 
 function processaJogo(dados, informacoes) {
+    
+    if(informacoes.numero==1) {   
+        informacoes.temporizador = 91;
+        var tempoRestante = "Restam: " + informacoes.temporizador + "s";
+        $("#tempo").html(tempoRestante);
+    }
+    
     var palavras = new Array();
 
     /*
@@ -205,9 +212,6 @@ function processaJogo(dados, informacoes) {
      */
     informacoes.numero++;
     if(informacoes.numero==4) {
-        informacoes.temporizador = 91;
-        var tempoRestante = "Restam: " + informacoes.temporizador + "s";
-        $("#tempo").html(tempoRestante);
         informacoes.numero=1;
         informacoes.nivel++;
     }
