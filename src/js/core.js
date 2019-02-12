@@ -133,8 +133,12 @@ function randomizer(vetor) {
 
 function processaJogo(dados, informacoes) {
     
-    if(informacoes.numero==4) {   
-        informacoes.temporizador = 91;
+    /*
+     * Se a palavra é maior que a terceira, ele reinicia a contagem do
+     * tempo, e avança ao próximo nível e reinicia a contagem das palavras
+     */
+    if(informacoes.numero>3) {   
+        informacoes.temporizador = 90;
         var tempoRestante = "Restam: " + informacoes.temporizador + "s";
         $("#tempo").html(tempoRestante);
         informacoes.numero=1;
@@ -209,8 +213,7 @@ function processaJogo(dados, informacoes) {
     $("#exibePalavra").text(palavrasNivel[0] + ".");
 
     /*
-     * Avança à próxima palavra e, se passar da terceira,
-     * reinicia para a primeira palavra do próximo nível.
+     * Avança à próxima palavra
      */
     informacoes.numero++;
 }
