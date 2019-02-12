@@ -133,10 +133,12 @@ function randomizer(vetor) {
 
 function processaJogo(dados, informacoes) {
     
-    if(informacoes.numero==1) {   
+    if(informacoes.numero==4) {   
         informacoes.temporizador = 91;
         var tempoRestante = "Restam: " + informacoes.temporizador + "s";
         $("#tempo").html(tempoRestante);
+        informacoes.numero=1;
+        informacoes.nivel++;
     }
     
     var palavras = new Array();
@@ -211,8 +213,4 @@ function processaJogo(dados, informacoes) {
      * reinicia para a primeira palavra do próximo nível.
      */
     informacoes.numero++;
-    if(informacoes.numero==4) {
-        informacoes.numero=1;
-        informacoes.nivel++;
-    }
 }
